@@ -3,8 +3,8 @@
 
 int main(void)
 {
-    int x = get_int("Give us a X" );
-    int y = get_int("Give us a Y" );
+    int x = get_int("Give us a X = ");
+    int y = get_int("Give us a Y = ");
     if (x > y)
     {
         printf("X is larger than Y\n");
