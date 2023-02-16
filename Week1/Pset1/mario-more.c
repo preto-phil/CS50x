@@ -23,51 +23,34 @@ int get_amount(void)
     return height;
 }
 
-//// Function to create blocks
-
-
-// If statement version
-/* 
-void create_Block(int height)
-{
-    for (int i = 1; i <= height; i++)
-    {    
-        for (int j = height; j > 0; j--)
-        {
-            if (j > i)
-            {
-                printf(" ");
-            }
-        }
-        for (int j = height; j > 0; j--)
-        {
-            if (j <= i)
-            {
-                printf("#");
-            }
-        }
-        printf("\n");
-    }
-}
-*/
-
-// For loop version
+// Function to create blocks
 
 void create_Block(int height)
 {
     // Rows
     for (int i = 0; i < height; i++)
-    {    
-        // Spaces
+    {
+
+        // Spaces #1
         for (int j = height - 1; j > i; j--)
         {
             printf(" ");
         }
-        // Hashes
+        // Hashes #1
         for (int k = i; k >= 0; k--)
         {
             printf("#");
         }
+
+        // Middle part
+        printf("  ");
+
+        // Hashes #2
+        for (int l = 0; l <= i; l++)
+        {
+            printf("#");
+        }
+
         // New line
         printf("\n");
     }
