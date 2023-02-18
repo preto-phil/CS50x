@@ -1,5 +1,3 @@
-//// Pseudocode 
-
 #include <stdio.h>
 #include <cs50.h>
 
@@ -83,7 +81,8 @@ if (amount >= 25)
 }
 while (amount > 0);
 
-
+int coinAmount = quarters + dimes + nickels + pennies;
+printf("Amount of coins: %i \n", coinAmount);
 
 
 
