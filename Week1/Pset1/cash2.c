@@ -3,9 +3,9 @@
 
 int get_cents(void);
 int calculate_quarters(int cents);
-int calculate_dimes(int cents, int quarters);
-int calculate_nickels(int cents, int quarters, int dimes);
-int calculate_pennies(int cents, int quarters, int dimes, int nickels);
+int calculate_dimes(int cents);
+int calculate_nickels(int cents);
+int calculate_pennies(int cents);
 
 int quarters;
 int dimes;
@@ -58,34 +58,55 @@ int calculate_quarters(int cents)
     if (cents >= 25)
     {
         
-        for (int i = amount; amount >= 25; i -= 25)
+        for (int i = cents; cents >= 25; i -= 25)
         {
             quarters += 1;
-            amount -= 25; 
+            cents -= 25; 
         }
-        printf("Quarters: %i \n", quarters);
-
     }
+    return quarters;
+
 }
 
-int calculate_dimes(int cents, int quarters)
+int calculate_dimes(int cents)
 {
     // TODO
-    dimes = (cents - quarters*25) / 10;
+    if (cents >= 10)
+    {
+        for (int i = cents; cents >= 10; i -= 10)
+        {
+        dimes += 1;
+        cents -= 10;
+        }
+    }
     return dimes;
 }
 
-int calculate_nickels(int cents, int quarters, int dimes)
+int calculate_nickels(int cents)
 {
     // TODO
-    nickels = (cents - (quarters * 25) - (dimes * 10) ) / 5;
+    if (cents >= 5)
+    {
+        for (int i = cents; cents >= 5; i -= 5)
+        {
+        nickels += 1;
+        cents -= 5;
+        }
+    }
     return nickels;
 }
 
-int calculate_pennies(int cents, int quarters, int dimes, int nickels)
+int calculate_pennies(int cents)
 {
     // TODO
-    pennies = (cents - (quarters * 25) - (dimes * 10) - (nickels * 5)) / 1;
+    if (cents >= 1)
+    {
+        for (int i = cents; cents >= 1; i -= 1)
+        {
+        pennies += 1;
+        cents -= 1;
+        }
+    }
     return pennies;
 }
 
@@ -100,7 +121,7 @@ int calculate_pennies(int cents, int quarters, int dimes, int nickels)
 
 int get_cents(void);
 int calculate_quarters(int cents);
-int calculate_dimes(int cents, int quarters);
+int calculate_pennies(int cents, int quarters);
 int calculate_nickels(int cents, int quarters, int dimes);
 int calculate_pennies(int cents, int quarters, int dimes, int nickels);
 
@@ -178,7 +199,7 @@ int calculate_pennies(int cents, int quarters, int dimes, int nickels)
     pennies = (cents - (quarters * 25) - (dimes * 10) - (nickels * 5)) / 1;
     return pennies;
 }
-
+*/
 
 /* 
 #include <cs50.h>
